@@ -38,15 +38,16 @@
     </style>
 </head>
 
-<body>
+<body class="position">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#!"><img src="images/logo.png" width="150px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="#!"><img src="images/logo.png" width="150px"></a>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item">
                         <a href="{{ url('/') }}" class="nav-link">Home</a>
                     </li>
@@ -56,6 +57,10 @@
                     <li class="nav-item">
                         <a href="{{ url('/') }}" class="nav-link">Company</a>
                     </li>
+                </ul>
+            </div>
+            <div class="" id="">
+                <ul class="navbar-nav ms-auto mt-1 mb-lg-0 fs-5">
                     @if (Route::has('login'))
                     @auth
                     <li class="nav-item">
@@ -63,16 +68,15 @@
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{ url('/login') }}" class="nav-link">Login</a>
+                        <a href="{{ url('/login') }}" class="nav-link ">Login</a>
                     </li>
+                    @endif
 
-                    
                     @endauth
-            </div>
-            @endif
 
-            </ul>
-        </div>
+
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- Page header with logo and tagline-->
@@ -86,7 +90,7 @@
         </div>
     </header>
     <!-- Page content-->
-    
+
     @livewire('blog')
 
 
