@@ -25,6 +25,7 @@ Route::get('/home', [App\Http\Controllers\BlogController::class, 'index'])->name
 Route::get('/create-blog', [App\Http\Controllers\BlogController::class, 'create'])->name('blog.create');
 Route::post('/store-blog', [App\Http\Controllers\BlogController::class, 'store'])->name('blog.store');
 Route::get('/delete/{id}', [App\Http\Controllers\BlogController::class, 'delete'])->name('blog.delete');
+Route::get('/view/{id}', [App\Http\Controllers\BlogController::class, 'view'])->name('blog.view');
 
 
 Route::get('/clear', function() {

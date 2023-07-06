@@ -24,22 +24,22 @@
 
                         <!-- {{ __('You are logged in!') }} -->
                         <div class="row">
-                            <div class="col-md-10">
-                                <h1>My Blogs</h1>
+                            <div class="col-md-10 col-sm-3 col-6">
+                                <h3>My Blogs</h3>
                             </div>
-                            <div class="col-md-2 align-items-center">
+                            <div class="col-md-2 align-items-center col-sm-3 col-6">
                                 <a href="/create-blog"><button>Create a new Blogs</button></a>
                             </div>
                         </div>
                         <div class="row">
-                            <table class="table">
+                            <table class="table-responsive table table-striped-columns table-bordered">
                                 <thead>
                                     <tr>
-                                        <th scope="col" colspan="1">#ID</th>
-                                        <th scope="col" colspan="4">Blog Heading</th>
-                                        <th scope="col" colspan="2">Published date</th>
-                                        <th scope="col" colspan="2">Last updated date</th>
-                                        <th scope="col" colspan="1">Blog views</th>
+                                        <th scope="col" colspan="1">#Id</th>
+                                        <th scope="col" colspan="4">Heading</th>
+                                        <th scope="col" colspan="2">Date</th>
+                                        <!-- <th scope="col" colspan="2">Last updated date</th> -->
+                                        <th scope="col" colspan="1">views</th>
                                         <th scope="col">Settings</th>
                                     </tr>
                                 </thead>
@@ -48,19 +48,21 @@
                                         <tr>
                                             <th colspan="1"> {{ $blog['id'] }}</th>
                                             <th colspan="4">{{ $blog['heading'] }}</th>
-                                            <td colspan="2">{{ $blog['created_at'] }}</td>
-                                            <td colspan="2">{{ $blog->updated_at }}</td>
+                                            <td colspan="2">{{ $blog['created_at']->diffForHumans() }}</td>
+                                            <!-- <td colspan="2">{{ $blog->updated_at }}</td> -->
                                             <td colspan="1">{{ $blog['views'] }}</td>
                                             <td>
-                                                <a href="" style="color: green;">View</a>
-                                                &nbsp; <a href="" style="color: blue;">Edit</a>
+                                                <a href="/view/{{ $blog['id'] }}" style="color: green;">View</a>
+                                                &nbsp; <a href="/edit/{{ $blog['id'] }}" style="color: blue;">Edit</a>
                                                 &nbsp; <a href="/delete/{{ $blog['id'] }}" style="color: red;">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
+                                    
                                 </tbody>
                             </table>
                             </table>
+                            {{ $blogs->links() }}
                         </div>
                     </div>
                 </div>

@@ -39,31 +39,35 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#!"><img src="images/logo.png" width="250px"></a>
+            <a class="navbar-brand" href="#!"><img src="images/logo.png" width="150px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+                    <li class="nav-item">
+                        <a href="{{ url('/') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/') }}" class="nav-link">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/') }}" class="nav-link">Company</a>
+                    </li>
                     @if (Route::has('login'))
-                        @auth
-                            <li class="nav-item">
-                                <a href="{{ url('/home') }}" class="nav-link">Dashboard</a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a href="{{ url('/login') }}" class="nav-link">Login</a>
-                            </li>
+                    @auth
+                    <li class="nav-item">
+                        <a href="{{ url('/home') }}" class="nav-link">Account</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a href="{{ url('/login') }}" class="nav-link">Login</a>
+                    </li>
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a href="{{ url('/register') }}" class="nav-link">Register</a>
-                                </li>
-                            @endif
-                        @endauth
+                    
+                    @endauth
             </div>
             @endif
 
@@ -82,13 +86,14 @@
         </div>
     </header>
     <!-- Page content-->
+    
     @livewire('blog')
 
 
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website {{date('Y')}}</p>
             <div class="align-items-center text-center" style="color: white;font-size:10px">
                 Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
             </div>

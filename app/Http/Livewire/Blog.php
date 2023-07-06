@@ -12,7 +12,7 @@ class Blog extends Component
     
     public function render()
     {
-        $blogs=ModelsBlog::where('heading','like','%'.$this->term.'%')->simplePaginate(5);
+        $blogs=ModelsBlog::where('heading','like','%'.$this->term.'%')->simplePaginate(2);
         return view('livewire.blog',['blogs'=>$blogs]);
         //  return view('livewire.blog');
     }

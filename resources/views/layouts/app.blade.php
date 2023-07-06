@@ -26,7 +26,7 @@
     <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet" /> -->
 </head>
 
-<body>
+<body class="bg-light border-rounded border">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

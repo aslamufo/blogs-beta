@@ -20,7 +20,8 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs=Blog::all();
+        $blogs=Blog::where('heading','like','%%')->simplePaginate(5);
+        // $blogs=Blog::all()->simplePaginate(5);
         return view('home',['blogs'=>$blogs]);
     }
 
@@ -31,6 +32,16 @@ class BlogController extends Controller
         $blogs=Blog::where('id',$id)->delete();
 
         return redirect('/home');
+        
+    }
+
+    public function view($id)
+    {
+        
+        $blog=Blog::where('id',$id)->get();
+        // dd($blog);
+        // return redirect('/viewBlog'.['blog'=>$blog]);
+        return view('viewBlog',['blogs'=>$blog]);
         
     }
 
