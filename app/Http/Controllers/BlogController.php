@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function welcome()
     {
         // $blogs=Blog::simplePaginate(6);
-        return view('welcome');   
+        return view('index');   
     }
 
     public function index()

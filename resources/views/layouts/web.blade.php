@@ -18,6 +18,13 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            }
+
+        footer {
+        margin-top: auto;
         }
 
         .header-laravel {
@@ -37,16 +44,16 @@
     </style>
 </head>
 
-<body class="position">
-    @include('layouts.app-nav')
+<body class="">
+    @include('layouts.web-nav')
 
     @yield('content')
 
-    @include('layouts.app-footer')
+    @include('layouts.web-footer')
 
     @livewireScripts
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/4.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="/docs/4.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-</html>
+
