@@ -6,14 +6,14 @@ use Livewire\Component;
 use App\Models\Blog as ModelsBlog;
 
 
-class BlogSidebar extends Component
+class BlogList extends Component
 {
     public $term="";
     
     public function render()
     {
-        $blogs=ModelsBlog::where('heading','like','%'.$this->term.'%')->simplePaginate(6);
-        return view('livewire.blog-sidebar',['blogs'=>$blogs]);
+        $blogs=ModelsBlog::where('heading','like','%'.$this->term.'%')->simplePaginate(4);
+        return view('livewire.blog-list',['blogs'=>$blogs]);
         //  return view('livewire.blog');
     }
 }

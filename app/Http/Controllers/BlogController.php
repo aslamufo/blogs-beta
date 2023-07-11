@@ -22,7 +22,7 @@ class BlogController extends Controller
     {
         $blogs=Blog::where('heading','like','%%')->simplePaginate(5);
         // $blogs=Blog::all()->simplePaginate(5);
-        return view('home',['blogs'=>$blogs]);
+        return view('dashboard.index',['blogs'=>$blogs]);
     }
 
 

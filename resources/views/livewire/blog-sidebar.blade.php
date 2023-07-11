@@ -3,21 +3,24 @@
 </script>
 <!-- <div class="row" data-masonry='{"percentPosition": true }'> -->
 
-    <!-- Blog post-->
+<!-- Blog post-->
+<div class="row">
     @foreach ($blogs as $blog)
-    <div class="col-12 mb-3 mb-sm-0">
-        <div class="card-column mb-5">
-            <img class="card-img-top" src="/images/{{ $blog['img_url'] }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ $blog['heading'] }}</h5>
-                {{-- <p class="card-text">{{ $blog['content'] }} </p> --}}
-                <p class="card-text"><small class="text-muted">
-                        {{ $blog['created_at']->diffForHumans() }}</small>
-                </p>
+        <div class="col-6 mb-3 mb-sm-0">
+            <div class="card-column mb-2">
+                <img class="card-img-top" src="/images/{{ $blog['img_url'] }}" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title fs-6">{{ $blog['heading'] }}</h6>
+                    {{-- <p class="card-text">{{ $blog['content'] }} </p> --}}
+                    <p class="card-text"><small class="text-muted">
+                            {{ $blog['created_at']->diffForHumans() }}</small>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
     @endforeach
+</div>
+
 
 
 </div>
